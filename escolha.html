@@ -4,42 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escolha seu Produto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.05);
       text-align: center;
-      background-color: #f9f9f9;
+      max-width: 500px;
+      width: 90%;
     }
+
     h1 {
+      font-size: 24px;
       margin-bottom: 30px;
+      color: #222;
     }
-    a.button {
+
+    .button {
       display: block;
-      margin: 15px auto;
-      padding: 15px 30px;
       background-color: #0077cc;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 18px;
-      width: 80%;
-      max-width: 300px;
+      padding: 16px;
+      margin: 12px 0;
+      border-radius: 8px;
+      font-weight: 600;
       transition: background-color 0.3s ease;
     }
-    a.button:hover {
+
+    .button:hover {
       background-color: #005fa3;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>Escolha o tipo de produto que deseja comprar</h1>
-  <a class="button" href="https://pay.kiwify.com.br/o8URY2T">Landing Page - R$1500</a>
-  <a class="button" href="https://pay.kiwify.com.br/f7zrvG2x">Site Institucional - R$2100</a>
-  <a class="button" href="https://pay.kiwify.com.br/vAttx5Y">E-Commerce - R$3100</a>
-</body>
-</html>
+  <div class="container">
+    <h1>Escolha o tipo de produto que deseja comprar</h1>
 
+    <a href="https://pay.kiwify.com.br/o8URY2T" class="button">Landing Page - R$1500</a>
+    <a href="https://pay.kiwify.com.br/7rzvG2x" class="button">Site Institucional - R$2100</a>
+    <a href="https://pay.kiwify.com.br/vAttx5Y" class="button">E
