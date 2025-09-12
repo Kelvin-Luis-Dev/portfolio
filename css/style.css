@@ -1,0 +1,60 @@
+/* No seu arquivo style.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #f0f0f0; /* Cor do texto principal clara */
+}
+
+/* Para o card de soluções, vamos garantir que o texto seja claro */
+.skill-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #b1a6a6; /* Fundo do card mais claro para contraste */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+}
+
+.skill-item h3 {
+    color: #3c3891; /* Cor de destaque para os títulos */
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    color: #ccc; /* Cor do texto descritivo mais clara */
+}
+
+.botoes-projetos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.botao-projeto {
+  padding: 14px 28px;
+  background-color: #0d6efd; /* azul padrão */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.botao-projeto:hover {
+  background-color: #084298;
+  transform: translateY(-2px);
+}
+
+/* Botão secundário (Voltar) com cor diferente */
+.botao-voltar {
+  background-color: #6c757d;
+}
+
+.botao-voltar:hover {
+  background-color: #495057;
+}

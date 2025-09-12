@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Kelvin Alves Luis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Cursor piscando no efeito digitando */
+    .typed-cursor {
+      display: inline-block;
+      width: 3px;
+      background: #818181;
+      animation: blink 0.7s infinite;
+      margin-left: 3px;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    /* Fundo animado com gradiente */
+    body {
+      background: linear-gradient(-45deg, #120f2a, #1e293b, #2d2b59, #150e2b);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Card flutuante */
+    .card-float {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-float:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Botão neon */
+    .btn-neon {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      border: 2px solid #cdcdcd;
+      transition: color 0.3s ease, background 0.3s ease;
+    }
+    .btn-neon::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, #6f6f7c, transparent);
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+    }
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+
+    /* Texto com gradiente */
+    .gradient-text {
+      background: linear-gradient(to right, #ffffff, #acacac);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="text-gray-900">
+
+<section class="relative h-[80vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="clip/videotst.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+
+  <div class="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
+
+  <div class="relative z-10 text-white">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text">
+      Olá, eu sou <span id="typed-text"></span><span class="typed-cursor"></span>
+    </h1>
+    <p class="text-lg md:text-xl mb-8 text-white/90">
+      Desenvolvedor Web & Criador Digital<br>
+      Sites institucionais, landing pages e e-commerces
+    </p>
+    <div class="flex gap-4 justify-center">
+      <a href="sobremim.html" class="px-6 py-3 rounded-lg btn-neon">Assista</a>
+      <a href="projetos.html" class="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition">Ver meus projetos</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Soluções -->
+<section id="solucoes" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-indigo-950 text-white">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Soluções em Desenvolvimento Web</h2>
+    <p class="text-lg text-gray-300">
+      Tudo o que sua empresa precisa para ter presença digital forte, moderna e que gera resultados reais.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="p-8 bg-white/10 rounded-2xl shadow-lg card-float">
+      <h3 class="text-xl font-semibold mb-3 text-indigo-400">Sites de Alta Performance</h3>
+      <p class="text-gray-300">
+        Páginas leves e otimizadas para carregar rápido, garantindo melhor experiência ao usuário e destaque no Google.
+      </p>
+    </div>
+
+    <div class="p-8 bg-white/10 rounded-2xl shadow-lg card-float">
+      <h3 class="text-xl font-semibold mb-3 text-indigo-400">Design Responsivo</h3>
+      <p class="text-gray-300">
+        Seu site impecável em qualquer dispositivo: desktop, tablet ou celular. Mais alcance, mais clientes, mais resultados.
+      </p>
+    </div>
+
+    <div class="p-8 bg-white/10 rounded-2xl shadow-lg card-float">
+      <h3 class="text-xl font-semibold mb-3 text-indigo-400">Otimização para Conversão</h3>
+      <p class="text-gray-320">
+        Layouts e textos estratégicos que direcionam seu cliente para a ação: comprar, entrar em contato ou contratar.
+      </p>
+      </div>
+
+    <div class="p-8 bg-white/10 rounded-2xl shadow-lg card-float">
+      <h3 class="text-xl font-semibold mb-3 text-indigo-400">Integrações e Funcionalidades</h3>
+      <p class="text-gray-300">
+        Recursos avançados como formulários dinâmicos, galerias, chats e integrações com redes sociais.
+      </p>
+    </div>
+
+    <div class="p-8 bg-white/10 rounded-2xl shadow-lg card-float">
+      <h3 class="text-xl font-semibold mb-3 text-indigo-400">Estratégia Digital</h3>
+      <p class="text-gray-300">
+        Soluções criadas sob medida para destacar sua marca, fortalecer autoridade e aumentar conversões.
+      </p>
+    </div>
+
+    <div class="p-8 bg-white/10 rounded-2xl shadow-lg card-float">
+      <h3 class="text-xl font-semibold mb-3 text-indigo-400">Suporte & Evolução</h3>
+      <p class="text-gray-300">
+        Acompanhamento contínuo para evoluir seu site junto com sua empresa e novas demandas de mercado.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="projetos" class="max-w-6xl mx-auto px-6 py-16 text-white" >
+ <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Projetos Desenvolvidos</h2>
+     </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Projeto 1 -->
+    <div class="bg-gray-200 rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-xl">
+  <div class="overflow-hidden rounded-md mb-4">
+    <img src="img/ladingpage.png" alt="Projeto 1" class="w-full h-48 object-cover transform hover:scale-110 transition duration-500">
+  </div>
+  <h3 class="text-xl font-semibold text-gray-800 mb-2">Lading Pages</h3>
+  <p class="text-gray-600 mb-4">
+    Landing page para empresa X focada em gerar leads com design moderno e responsivo.
+  </p>
+  <a href="projetos.html#lading-page" class="inline-block mt-2 text-sm font-medium text-indigo-600 hover:text-indigo-800 transition">Ver mais detalhes</a>
+</div>
+
+    <!-- Projeto 2 -->
+    <div class="bg-gray-200 rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-xl">
+      <div class="overflow-hidden rounded-md mb-4">
+        <img src="img/fotopodcast.JPEG" alt="Projeto 2" class="w-full h-48 object-cover transform hover:scale-110 transition duration-500">
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">E-Commerces</h3>
+      <p class="text-gray-600 mb-4">E-commerce com integração de pagamento, design responsivo e usabilidade aprimorada.</p>
+      <a href="projetos.html#e-commerce" class="inline-block mt-2 text-sm font-medium text-indigo-600 hover:text-indigo-800 transition">Ver mais detalhes</a>
+    </div>
+
+    <!-- Projeto 3 -->
+    <div class="bg-gray-200 rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-xl">
+      <div class="overflow-hidden rounded-md mb-4">
+        <img src="img/sinteinstitucional.png" alt="Projeto 3" class="w-full h-48 object-cover transform hover:scale-110 transition duration-500">
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Sites Institucionais</h3>
+      <p class="text-gray-600 mb-4">Site institucional para empresa Z, otimizado para performance e mobile.
+      </p>
+      <a href="projetos.html#site-institucional" class="inline-block mt-2 text-sm font-medium text-indigo-600 hover:text-indigo-800 transition">Ver mais detalhes</a>
+    </div>
+  </div>
+
+  <!-- Botão Ver mais projetos -->
+  <div class="text-center mt-12">
+    <a href="projetos.html" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full shadow-md transition">
+      + Ver mais projetos
+    </a>
+  </div>
+</section>
+
+<section id="contato" class="py-20 text-center px-6">
+  <h2 class="text-3xl font-bold mb-6 reveal text-white">Vamos conversar?</h2>
+  <p class="mb-8 reveal text-white/80">Seu próximo site pode estar pronto em poucos dias 🚀</p>
+
+  <form action="https://formsubmit.co/parceriaskelvinluis@gmail.com" method="POST" class="max-w-xl mx-auto space-y-4 reveal" id="contact-form">
+    <input type="text" name="nome" placeholder="Seu nome" required class="w-full p-3 rounded bg-white/10 text-white border border-gray-700">
+    <input type="email" name="email" placeholder="Seu e-mail" required class="w-full p-3 rounded bg-white/10 text-white border border-gray-700">
+    <textarea name="mensagem" placeholder="Sua mensagem" required class="w-full p-3 rounded bg-white/10 text-white border border-gray-700"></textarea>
+    <button type="submit" class="w-full py-3 bg-indigo-500 rounded-lg font-semibold hover:bg-indigo-600 transition">Enviar</button>
+  </form>
+
+  <div id="success-message" class="hidden mt-8 text-center text-green-500 font-semibold text-lg">
+    Obrigado pelo contato, retornaremos em menos de 24h.
+  </div>
+
+  <div class="mt-8 reveal">
+    <a href="https://wa.me/5547991103924" target="_blank" class="text-indigo-400 hover:underline">Ou fale comigo no WhatsApp</a>
+  </div>
+</section>
+
+<footer class="bg-[#0f172a] text-gray-300 py-10 mt-16">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+    <div>
+      <h3 class="text-lg font-semibold text-white">Kelvin Alves Luis</h3>
+      <p class="text-sm mt-2">Desenvolvedor Web & Criador de Conteúdo</p>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold text-white">Links Rápidos</h3>
+      <ul class="mt-2 space-y-2">
+        <li><a href="sobremim.html" class="hover:text-indigo-400 transition">Sobre Mim</a></li>
+        <li><a href="#projetos" class="hover:text-indigo-400 transition">Projetos</a></li>
+        <li><a href="#contato" class="hover:text-indigo-400 transition">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold text-white">Conecte-se</h3>
+      <div class="flex justify-center md:justify-start gap-4 mt-3">
+        <a href="https://github.com/seuusuario" target="_blank" class="hover:text-indigo-400 transition">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.308 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.02c-3.33.72-4.04-1.61-4.04-1.61-.54-.6-1.32-.76-1.32-.76-1.08-.74.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49 1.06.11-.82.42-1.3.76-1.6-2.67-.3-5.48-1.34-5.48-5.94 0-1.31.47-2.39 1.23-3.23-.12-.3-.54-1.53.11-3.18 0 0 1-.32 3.3.62.94-.26 1.93-.4 2.92-.4.99 0 1.98.14 2.92.4 2.3-.94 3.3-.62 3.3-.62.65 1.65.23 2.88.11 3.18.76.84 1.23 1.92 1.23 3.23 0 4.65-2.82 5.64-5.49 5.94.42.36.82 1.06.82 2.14v3.18c0 .32.22.69.82.57C20.56 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kelvin-luis-853b10231" target="_blank" class="hover:text-indigo-400 transition">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M22.23 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.46c.97 0 1.77-.77 1.77-1.73V1.73C24 .77 23.2 0 22.23 0zM7.22 20.46H3.66V9.06h3.56v11.4zM5.44 7.42a2.21 2.21 0 11.002-4.42 2.21 2.21 0 01-.002 4.42zM20.46 20.46h-3.57v-5.69c0-1.35-.48-2.27-1.7-2.27-1.22 0-1.94.8-1.94 2.22v5.74h-3.56s.05-10.42 0-11.41h3.56v1.61c.47-.85 1.54-1.73 3.24-1.73 2.37 0 4.15 1.5 4.15 4.77v6.76z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/soukelvinluis" target="_blank" class="hover:text-indigo-400 transition">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07c1.405.08 2.348.334 3.18.665.845.342 1.48.817 2.135 1.472.656.655 1.13 1.29 1.472 2.135.33.832.585 1.775.665 3.18.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.08 1.405-.334 2.348-.665 3.18-.342.845-.817 1.48-1.472 2.135-.655.656-1.29 1.13-2.135 1.472-.832.33-1.775.585-3.18.665-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.405-.08-2.348-.334-3.18-.665-.845-.342-1.48-.817-2.135-1.472-.656-.655-1.13-1.29-1.472-2.135-.33-.832-.585-1.775-.665-3.18-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.08-1.405.334-2.348.665-3.18.342-.845.817-1.48 1.472-2.135.655-.656 1.29-1.13 2.135-1.472.832-.33 1.775-.585 3.18-.665 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.268 0-3.692.013-4.992.073-1.748.098-2.923.4-3.882.784-1.074.42-1.928 1.053-2.828 1.953-.89.89-1.523 1.754-1.953 2.828-.384.959-.686 2.134-.784 3.882-.06 1.3-.073 1.724-.073 4.992s.013 3.692.073 4.992c.098 1.748.4 2.923.784 3.882.42 1.074 1.053 1.928 1.953 2.828.89.89 1.754 1.523 2.828 1.953.959.384 2.134.686 3.882.784 1.3.06 1.724.073 4.992.073s3.692-.013 4.992-.073c1.748-.098 2.923-.4 3.882-.784 1.074-.42 1.928-1.053 2.828-1.953.89-.89 1.523-1.754 1.953-2.828.384-.959.686-2.134.784-3.882.06-1.3.073-1.724.073-4.992s-.013-3.692-.073-4.992c-.098-1.748-.4-2.923-.784-3.882-.42-1.074-1.053-1.928-1.953-2.828-.89-.89-1.754-1.523-2.828-1.953-.959-.384-2.134-.686-3.882-.784-1.3-.06-1.724-.073-4.992-.073z"/>
+            <path d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.41a3.275 3.275 0 110-6.55 3.275 3.275 0 010 6.55z"/>
+            <circle cx="17.65" cy="6.35" r="1.225"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 text-center text-sm">
+    <p>© 2025 Kelvin Alves Luis - Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+  // Efeito digitando
+  const text = "Kelvin Alves Luis";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typed-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+  window.onload = typeWriter;
+
+  // Scroll Reveal
+  ScrollReveal().reveal('.reveal', {
+    delay: 200,
+    duration: 1000,
+    distance: '50px',
+    origin: 'bottom',
+    easing: 'ease-in-out',
+    reset: false
+  });
+
+  // Novo script para o formulário
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.classList.add('hidden');
+        document.getElementById('success-message').classList.remove('hidden');
+      } else {
+        alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+      }
+    })
+    .catch(error => {
+      alert('Ocorreu um erro na conexão. Por favor, tente novamente mais tarde.');
+    });
+  });
+</script>
+</body>
+</html>
