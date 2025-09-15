@@ -1,89 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Escolha seu Produto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #0d0f23, #1c1f4a);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
-    .container {
-      background-color: #1f2240;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      text-align: center;
-      max-width: 600px;
-      width: 90%;
-    }
-
-    h1 {
-      font-size: 26px;
-      margin-bottom: 30px;
-      color: #ffffff;
-    }
-
-    .button {
-      display: block;
-      background: #007bff;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 16px 20px;
-      margin: 15px 0;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 16px;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .button:hover {
-      background: #0056b3;
-      transform: translateY(-2px);
-    }
-
-    .price {
-      font-size: 14px;
-      font-weight: 400;
-      opacity: 0.85;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #888;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha seu site</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>Escolha o tipo de produto que deseja comprar</h1>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
 
-    <a href="https://pay.kiwify.com.br/o8URY2T" class="button">
-      Landing Page</a>
-    <a href="https://pay.kiwify.com.br/7zrvG2x" class="button">
-      Site Institucional</a>
+  <div class="text-center space-y-6">
+    <h1 class="text-3xl font-bold mb-6">Escolha o tipo de site que você deseja 🚀</h1>
 
-    <a href="https://pay.kiwify.com.br/vAttx5Y" class="button">
-      E-Commerce</a>
-
-    <footer>
-      © 2025 Kelvin Alves. Todos os direitos reservados.
-    </footer>
+    <div class="flex flex-col md:flex-row gap-6 justify-center">
+      <a id="btn-ecommerce" class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg font-semibold transition shadow-lg">
+        Quero E-commerce 🛒
+      </a>
+      <a id="btn-landing" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition shadow-lg">
+        Quero Landing Page ⚡
+      </a>
+      <a id="btn-institucional" class="px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold transition shadow-lg">
+        Quero Site Institucional 💼
+      </a>
+    </div>
   </div>
+
+  <script>
+    // Captura parâmetro de afiliado da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const afiliado = urlParams.get('af');
+
+    if (afiliado) {
+      localStorage.setItem('afiliado', afiliado);
+    }
+
+    // Função para gerar link com ou sem afiliado
+    function getCheckoutLink(baseLink) {
+      const ref = localStorage.getItem('afiliado');
+      if (ref) {
+        return `${baseLink}?af=${ref}`;
+      }
+      return baseLink;
+    }
+
+    // Aplica os links nos botões
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("btn-ecommerce").href =
+        getCheckoutLink("https://pay.kiwify.com.br/vAttx5Y");
+      document.getElementById("btn-landing").href =
+        getCheckoutLink("https://pay.kiwify.com.br/o8URY2T");
+      document.getElementById("btn-institucional").href =
+        getCheckoutLink("https://pay.kiwify.com.br/7zrvG2x");
+    });
+  </script>
+
 </body>
 </html>
