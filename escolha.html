@@ -25,33 +25,35 @@
   </div>
 
   <script>
-    // Captura parâmetro de afiliado da URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const afiliado = urlParams.get('af');
+  // Captura parâmetro de afiliado da URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const afiliado = urlParams.get('aff');
 
-    if (afiliado) {
-      localStorage.setItem('afiliado', afiliado);
+  if (afiliado) {
+    // Guarda no localStorage para persistir se o usuário navegar na página
+    localStorage.setItem('afiliado', afiliado);
+  }
+
+  // Função para gerar link com ou sem afiliado
+  function getCheckoutLink(baseLink) {
+    const ref = localStorage.getItem('afiliado');
+    if (ref) {
+      return `${baseLink}?aff=${ref}`; // Mantém parâmetro 'aff' para afiliado
     }
+    return baseLink; // Cliente direto, sem afiliado
+  }
 
-    // Função para gerar link com ou sem afiliado
-    function getCheckoutLink(baseLink) {
-      const ref = localStorage.getItem('afiliado');
-      if (ref) {
-        return `${baseLink}?af=${ref}`;
-      }
-      return baseLink;
-    }
+  // Aplica os links nos botões de escolha
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("btn-ecommerce").href =
+      getCheckoutLink("https://pay.kiwify.com.br/vAttx5Y");
+    document.getElementById("btn-landing").href =
+      getCheckoutLink("https://pay.kiwify.com.br/o8URY2T");
+    document.getElementById("btn-institucional").href =
+      getCheckoutLink("https://pay.kiwify.com.br/7zrvG2x");
+  });
+</script>
 
-    // Aplica os links nos botões
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("btn-ecommerce").href =
-        getCheckoutLink("https://pay.kiwify.com.br/vAttx5Y");
-      document.getElementById("btn-landing").href =
-        getCheckoutLink("https://pay.kiwify.com.br/o8URY2T");
-      document.getElementById("btn-institucional").href =
-        getCheckoutLink("https://pay.kiwify.com.br/7zrvG2x");
-    });
-  </script>
 
 </body>
 </html>
