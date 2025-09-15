@@ -108,11 +108,24 @@
      class="px-6 py-3 border border-white hover:bg-white hover:text-black rounded-lg font-medium transition">
     Meus Projetos
   </a>
+      
   <!-- Botão para compra -->
-  <a href="escolha.html"
+  <div>
   <a id="btnQueroMeuSite" href="escolha.html" target="_blank" class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg font-semibold transition shadow-lg">Quero meu site</a>
 </div>
-  </div>
+    <script>
+  const btn = document.getElementById('btnQueroMeuSite');
+
+  // Pega o parâmetro 'aff' da URL atual
+  const urlParams = new URLSearchParams(window.location.search);
+  const aff = urlParams.get('aff');
+
+  if (aff) {
+    // Se veio pelo afiliado, adiciona o parâmetro ao botão
+    btn.href = `escolha.html?aff=${aff}`;
+  }
+</script>
+
 </section>
 
 <!-- Animações customizadas -->
